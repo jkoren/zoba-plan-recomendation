@@ -59,6 +59,7 @@ function Plan(PlanId) {
     trips.map((trip, index) => (
       <Trip 
         key={index}
+        tripNum={index+1}
         trip={trip}
       />
     )
