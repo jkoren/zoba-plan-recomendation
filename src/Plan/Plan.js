@@ -27,8 +27,8 @@ function Plan(PlanId) {
         throw Error(res.statusText);
       }
     })
-    .then(token => {
-      const tokenString = token.token
+    .then(tokenObject => {
+      const tokenString = tokenObject.token
       return tokenString
     })
     .then(tokenString => {
@@ -51,7 +51,7 @@ function Plan(PlanId) {
   }
 
   useEffect(() => {
-      FetchPlan("56072")
+      FetchPlan("55866")
   }, [])
 
   console.log("plan")
