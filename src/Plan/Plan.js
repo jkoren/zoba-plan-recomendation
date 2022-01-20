@@ -58,24 +58,10 @@ function Plan(PlanId) {
   console.log(plan)
 
   return (
-    <div>
-      {/* <div>
-          {followers.map(follower => (
-              <div className="follower-item">
-                  <img src={follower.picture.large}/>
-                  <div className="followers-details">
-                      <div className="follower-item-name">
-                          <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
-                      </div>
-                      <p>{follower.login.username}</p>
-                  </div>
-              </div>
-          ))}
-      </div>
-      <div className="todo-footer">
-          <Link to="/">Go Back</Link>
-      </div> */}
-    </div>
+    <>
+      <div>{plan.name}</div> 
+      <div>{plan.id}</div>
+    </>
   )
 }
 

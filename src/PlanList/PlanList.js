@@ -5,16 +5,15 @@ import './PlanList.css';
 
 function PlanList() {
 
-  // this doesn't really go here - just for testing
-  Plan(56072)
+  // Plan(56072)
   const tripPlans = [56072, 53402, 54920, 55866]
- 
+  
   const tripPlansElements = tripPlans.map((tripPlan, index) => (
     <li key={index}>
       {tripPlan}
     </li>
   ))
-
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -22,6 +21,7 @@ function PlanList() {
         <ol>
           {tripPlansElements}
         </ol>
+        {Plan(56702)}  {/* // this doesn't really go here - just for testing */}
       </header>
     </div>
   );
