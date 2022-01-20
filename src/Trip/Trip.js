@@ -1,4 +1,5 @@
 import Stop from '../Stop/Stop'
+import "./Trip.css"
 
 function Trip(props) {
   const trip = props.trip
@@ -17,10 +18,20 @@ function Trip(props) {
   )
 
   return (
-    <div>
-      Trip: {props.tripNum} - {vanId} - {warehouseId} - Initial Vehicles: {initial_vehicles}
+    <>
+      <h4>
+        Trip: {props.tripNum} - {vanId} - {warehouseId} - Initial Vehicles: {initial_vehicles}
+      </h4>
+      <tr>
+        <th>Stop number</th>
+        <th>Action</th>
+        <th>Num Vehicles</th>
+        <th>Vehicle ID</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+      </tr>
       {StopsComponent}
-    </div>
+    </>
   )
 }
 

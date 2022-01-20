@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Trip from '../Trip/Trip'
 
-function Plan(PlanId) {
+function Plan(props) {
   const [plan, setPlan] = useState([]);
   
+  const planId = props.planId
+  console.log(planId)
+
   const FetchPlan = async (passedPlanId) => {
     const username = "scooterer";
     const password = "geospatial optimization";
     const market = "austin"
     const authURL = "https://api.zoba.com/api/v1/app/api-token-auth/"
+
   
     fetch(authURL, {
       method: "POST",
@@ -52,6 +56,7 @@ function Plan(PlanId) {
 
   useEffect(() => {
       FetchPlan("55866")
+      // why can't replace "55866" with a variable?
   }, [])
 
   const trips = plan.trips
@@ -67,7 +72,8 @@ function Plan(PlanId) {
 
   return (
     <div>
-      {plan.name} {plan.id}
+      <h2> {plan.name} </h2>
+      <h2> {plan.id} </h2>
       {tripsComponent}
     </div>
   )

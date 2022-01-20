@@ -4,8 +4,6 @@ import Plan from '../Plan/Plan';
 import './PlanList.css';
 
 function PlanList() {
-
-  // Plan(56072)
   const tripPlans = [56072, 53402, 54920, 55866]
   
   const tripPlansElements = tripPlans.map((tripPlan, index) => (
@@ -21,7 +19,10 @@ function PlanList() {
         <ol>
           {tripPlansElements}
         </ol>
-        {Plan(56702)}  {/* // this doesn't really go here - just for testing */}
+        {/* {Plan(56702)}  // this doesn't really go here - just for testing */}
+        <Plan
+          planId = "56702"
+        />
       </header>
     </div>
   );
