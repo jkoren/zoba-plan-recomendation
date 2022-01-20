@@ -7,7 +7,6 @@ function PlanList() {
 
   // this doesn't really go here - just for testing
   Plan(56072)
-  
   const tripPlans = [56072, 53402, 54920, 55866]
  
   const tripPlansElements = tripPlans.map((tripPlan, index) => (

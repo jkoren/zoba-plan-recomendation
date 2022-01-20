@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const fetchPlan = async () => {
+const FetchPlan = async () => {
   const username = "scooterer";
   const password = "geospatial optimization";
   const market = "austin"
@@ -35,14 +35,14 @@ const fetchPlan = async () => {
       return fetch(planURL, {
         method: 'GET',
         headers:{
-          Accept: 'application/json',
-                  'Content-Type': 'application/json',
-                  'Authorization': "JWT " + tokenString
-          },
+          'Content-Type': 'application/json',
+          'Authorization': "JWT " + tokenString
+        },
       })
       .then(res => res.json())
       .then((planObject) => {
         console.log(planObject)
+        return planObject
         // need to put this result into state, then use it with React
       })
     })
@@ -50,37 +50,35 @@ const fetchPlan = async () => {
 }
 
 function Plan(PlanId) {
-
   const [plan, setPlan] = useState([]);
 
   useEffect(() => {
-      fetchPlan()
-  }, []);
+      // FetchPlan()
+      const planObject = FetchPlan()
+      // console.log(planObject)
+      setPlan(planObject)
+  }, [])
 
-
-      // const {data} = await axios.get("https://randomuser.me/api/?results=5")
-      // setPlan(data.results)
-
-    return (
-        <div>
-            {/* <div>
-                {followers.map(follower => (
-                    <div className="follower-item">
-                        <img src={follower.picture.large}/>
-                        <div className="followers-details">
-                            <div className="follower-item-name">
-                                <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
-                            </div>
-                            <p>{follower.login.username}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <div className="todo-footer">
-                <Link to="/">Go Back</Link>
-            </div> */}
-        </div>
-    )
+  return (
+    <div>
+      {/* <div>
+          {followers.map(follower => (
+              <div className="follower-item">
+                  <img src={follower.picture.large}/>
+                  <div className="followers-details">
+                      <div className="follower-item-name">
+                          <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
+                      </div>
+                      <p>{follower.login.username}</p>
+                  </div>
+              </div>
+          ))}
+      </div>
+      <div className="todo-footer">
+          <Link to="/">Go Back</Link>
+      </div> */}
+    </div>
+  )
 }
 
 export default Plan
