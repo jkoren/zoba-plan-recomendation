@@ -18,39 +18,41 @@ const FetchPlan = async () => {
       password
     })
   })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw Error(res.statusText);
+  .then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw Error(res.statusText);
+    }
+  })
+  .then(token => {
+    const tokenString = token.token
+    return tokenString
+  })
+  .then(tokenString => {
+    const planURL = `https://api.zoba.com/api/v1/market/${market}/trips/plan/${planId}/`
+  
+    return fetch(planURL, {
+      method: 'GET',
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': "JWT " + tokenString
       }
     })
-    .then(token => {
-      const tokenString = token.token
-      return tokenString
+    .then(res => res.json())
+    .then((planObject) => {
+      console.log(planObject)
+      return planObject
+      // need to put this result into state, then use it with React
     })
-    .then(tokenString => {
-      const planURL = `https://api.zoba.com/api/v1/market/${market}/trips/plan/${planId}/`
-    
-      return fetch(planURL, {
-        method: 'GET',
-        headers:{
-          'Content-Type': 'application/json',
-          'Authorization': "JWT " + tokenString
-        },
-      })
-      .then(res => res.json())
-      .then((planObject) => {
-        console.log(planObject)
-        return planObject
-        // need to put this result into state, then use it with React
-      })
-    })
-    .catch(error => console.error(error));
+  })
+  .catch(error => console.error(error));
 }
 
 function Plan(PlanId) {
   const [plan, setPlan] = useState([]);
+
+
 
   useEffect(() => {
       // FetchPlan()
