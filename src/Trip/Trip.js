@@ -4,6 +4,7 @@ function Trip(props) {
   const trip = props.trip
   const initial_vehicles = !trip ? "" : trip.initial_vehicles
   const vanId = !trip ? "" : trip.van.id
+  const warehouseId = !trip ? "" : trip.warehouse.id
   const stops = !trip ? [] : trip.stops
 
   const StopsComponent = !trip ? "" :
@@ -17,9 +18,7 @@ function Trip(props) {
 
   return (
     <div>
-      Trip: {props.tripNum}
-      Initial Vehicles: {initial_vehicles}
-      Van: {vanId}
+      Trip: {props.tripNum} - {vanId} - {warehouseId} - Initial Vehicles: {initial_vehicles}
       {StopsComponent}
     </div>
   )

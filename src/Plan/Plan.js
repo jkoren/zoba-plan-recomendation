@@ -66,11 +66,10 @@ function Plan(PlanId) {
   )
 
   return (
-    <>
-      <div>{plan.name}</div> 
-      <div>{plan.id}</div>
+    <div>
+      {plan.name} {plan.id}
       {tripsComponent}
-    </>
+    </div>
   )
 }
 
