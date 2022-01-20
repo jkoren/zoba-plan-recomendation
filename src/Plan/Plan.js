@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Trip from '../Trip/Trip'
 
 function Plan(PlanId) {
   const [plan, setPlan] = useState([]);
@@ -43,7 +44,6 @@ function Plan(PlanId) {
       })
       .then(res => res.json())
       .then((planObject) => {
-        console.log(planObject)
         setPlan(planObject)
       })
     })
@@ -54,13 +54,21 @@ function Plan(PlanId) {
       FetchPlan("55866")
   }, [])
 
-  console.log("plan")
-  console.log(plan)
+  const trips = plan.trips
+  const tripsComponent = !trips ? "" :
+    trips.map((trip, index) => (
+      <Trip 
+        key={index}
+        trip={trip}
+      />
+    )
+  )
 
   return (
     <>
       <div>{plan.name}</div> 
       <div>{plan.id}</div>
+      {tripsComponent}
     </>
   )
 }
