@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import logo from '../logo.svg';
 import '../Plan/Plan'
 import Plan from '../Plan/Plan';
@@ -5,25 +6,28 @@ import './PlanList.css';
 
 function PlanList() {
   const tripPlans = [56072, 53402, 54920, 55866]
-  
-  const tripPlansElements = tripPlans.map((tripPlan, index) => (
-    <li key={index}>
-      {tripPlan}
-    </li>
+  const [planNum, setPlanNum] = useState(tripPlans[0])
+
+  const handleChange = e => {
+    const { value } = e.target
+    console.log(value)
+    setPlanNum(value)
+  }
+
+  const tripPlansOptions = tripPlans.map((tripPlan, index) => (
+    <option key={index} defaultValue={tripPlan}> {tripPlan}  </option>
   ))
-  
+ 
   return (
   <>
     <img src={logo} className="App-logo" alt="logo" />
     <div className="App">
-      <header className="App-header">
-        <ol>
-          {tripPlansElements}
-        </ol>
+        <select onChange={handleChange} value={planNum} >
+          {tripPlansOptions}
+        </select>
         <Plan
-          planId = "53402"
+          planId={planNum}
         />
-      </header>
     </div>
   </>
   );

@@ -22,15 +22,21 @@ function Trip(props) {
       <h4>
         Trip: {props.tripNum} - {vanId} - {warehouseId} - Initial Vehicles: {initial_vehicles}
       </h4>
-      <tr>
-        <th>Stop number</th>
-        <th>Action</th>
-        <th>Num Vehicles</th>
-        <th>Vehicle ID</th>
-        <th>Longitude</th>
-        <th>Latitude</th>
-      </tr>
-      {StopsComponent}
+      <table>
+        <thead>
+          <tr>
+            <th>Stop number</th>
+            <th>Action</th>
+            <th>Num Vehicles</th>
+            <th>Vehicle ID</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          {StopsComponent}
+        </tbody>
+      </table>
     </>
   )
 }
