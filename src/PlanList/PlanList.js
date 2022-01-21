@@ -13,18 +13,19 @@ function PlanList() {
   ))
   
   return (
+  <>
+    <img src={logo} className="App-logo" alt="logo" />
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <ol>
           {tripPlansElements}
         </ol>
-        {/* {Plan(56702)}  // this doesn't really go here - just for testing */}
         <Plan
-          planId = "56702"
+          planId = "53402"
         />
       </header>
     </div>
+  </>
   );
 }
 

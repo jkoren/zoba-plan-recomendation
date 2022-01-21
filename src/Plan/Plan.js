@@ -3,17 +3,14 @@ import Trip from '../Trip/Trip'
 
 function Plan(props) {
   const [plan, setPlan] = useState([]);
-  
   const planId = props.planId
-  console.log(planId)
 
-  const FetchPlan = async (passedPlanId) => {
+  const FetchPlan = async () => {
     const username = "scooterer";
     const password = "geospatial optimization";
     const market = "austin"
     const authURL = "https://api.zoba.com/api/v1/app/api-token-auth/"
 
-  
     fetch(authURL, {
       method: "POST",
       headers: {
@@ -37,7 +34,7 @@ function Plan(props) {
       return tokenString
     })
     .then(tokenString => {
-      const planURL = `https://api.zoba.com/api/v1/market/${market}/trips/plan/${passedPlanId}/`
+      const planURL = `https://api.zoba.com/api/v1/market/${market}/trips/plan/${planId}/`
     
       return fetch(planURL, {
         method: 'GET',
@@ -55,8 +52,8 @@ function Plan(props) {
   }
 
   useEffect(() => {
-      FetchPlan("55866")
-      // why can't replace "55866" with a variable?
+      FetchPlan()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const trips = plan.trips
