@@ -5,17 +5,23 @@ import Plan from '../Plan/Plan';
 import './PlanList.css';
 
 function PlanList() {
-  const tripPlans = [56072, 53402, 54920, 55866]
+  const tripPlans = [
+    [56072,"Small Midday Rebalance"], 
+    [53402, "Small Midday Rebalance"],
+    [54920, "Small Midday Rebalance"] , 
+    [55866, "Small Midday Rebalance"]
+  ]
   const [planNum, setPlanNum] = useState(tripPlans[0])
 
   const handleChange = e => {
     const { value } = e.target
-    console.log(value)
-    setPlanNum(value)
+    const planNum = value.substring(0,5)
+    console.log(planNum)
+    setPlanNum(planNum)
   }
 
   const tripPlansOptions = tripPlans.map((tripPlan, index) => (
-    <option key={index} defaultValue={tripPlan}> {tripPlan}  </option>
+    <option key={index} defaultValue={tripPlan[0]}> {tripPlan[0]} {tripPlan[1]}  </option>
   ))
  
   return (

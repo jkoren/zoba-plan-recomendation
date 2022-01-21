@@ -52,6 +52,8 @@ function Plan(props) {
   }
 
   useEffect(() => {
+      // why isn't it doing a new FetchPlan when planId changes?
+      console.log("fetching plan")
       FetchPlan()
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
