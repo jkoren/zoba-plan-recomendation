@@ -10,7 +10,6 @@ function PlanList() {
 
   const handleChange = e => {
     const { value } = e.target
-    console.log(value)
     setPlanNum(value)
   }
 
