@@ -6,6 +6,7 @@ function Plan(props) {
   const planId = props.planId
 
   const FetchPlan = async () => {
+    // normally these would be environment variables
     const username = "scooterer";
     const password = "geospatial optimization";
     const market = "austin"
@@ -54,7 +55,7 @@ function Plan(props) {
   useEffect(() => {
       FetchPlan()
       // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [planId])
 
   const trips = plan.trips
   const tripsComponent = !trips ? "" :
@@ -69,8 +70,8 @@ function Plan(props) {
 
   return (
     <div>
-      <h2> {plan.name} </h2>
-      <h2> {plan.id} </h2>
+      <h2>{plan.name}</h2>
+      <h2>{plan.id}</h2>
       {tripsComponent}
     </div>
   )
