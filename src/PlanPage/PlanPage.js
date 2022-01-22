@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import logo from '../logo.svg';
 import '../Plan/Plan'
 import Plan from '../Plan/Plan';
-import './PlanList.css';
+import './PlanPage.css';
 
-function PlanList() {
+function PlanPage() {
   const tripPlans = [56072, 53402, 54920, 55866]
   const [planNum, setPlanNum] = useState(tripPlans[0])
 
@@ -32,4 +32,4 @@ function PlanList() {
   );
 }
 
-export default PlanList;
+export default PlanPage;

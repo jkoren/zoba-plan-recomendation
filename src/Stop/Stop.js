@@ -9,6 +9,15 @@ function Stop(props) {
   const numVehicles = !stop ? "" : stop.vehicles
   const vehicle_id = !stop || stop.vehicle_id === null ? "" : stop.vehicle_id
   const mapURL = `http://maps.google.com/maps?z=15&t=m&q=loc:+${latitude}+${longitude}`
+  const panoramaURL = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${latitude},${longitude}`
+
+  const setLongitude = props.setLongitude
+  const setLatitude = props.setLatitude
+
+  const handleClick = () => {
+    setLongitude(longitude)
+    setLatitude(latitude)
+  }
 
   return (
     <tr title="stop-row">
@@ -19,6 +28,8 @@ function Stop(props) {
       <td>{longitude}</td>
       <td>{latitude}</td>
       <td><a href={mapURL} target="_blank" rel="noreferrer">map</a></td>
+      <td><a href={panoramaURL} target="_blank" rel="noreferrer">panorama</a></td>
+      {/* <td><button onClick={handleClick}>Map</button></td> */}
     </tr>
   )
 }

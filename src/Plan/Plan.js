@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Trip from '../Trip/Trip'
 import FetchPlanNoAPI from './FetchPlanNoAPI';
+import Map from '../Map/Map'
 
 function Plan(props) {
   const [plan, setPlan] = useState([]);
+  const [longitude, setLongitude] = useState()
+  const [latitude, setLatitude] = useState()
+
   const planId = props.planId
 
   const FetchPlan = async () => {
@@ -71,12 +75,18 @@ function Plan(props) {
         key={index}
         tripNum={index+1}
         trip={trip}
+        setLongitude={setLongitude}
+        setLatitude={setLatitude}
       />
     )
   )
 
   return (
     <div>
+      <Map
+        longitude={longitude}
+        latitude={latitude}
+      />
       <h2>{plan.name}</h2>
       <h2>{plan.id}</h2>
       {tripsComponent}
