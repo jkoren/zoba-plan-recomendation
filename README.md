@@ -42,3 +42,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [React - Select Tag (for dropdown menu)](https://reactjs.org/docs/forms.html#the-select-tag)
 
 - [A Simple Explanation of React.useEffect()](https://dmitripavlutin.com/react-useeffect-explanation/)
+
+- [What parameters should I use in a Google Maps URL to go to a lat-lon?](https://stackoverflow.com/questions/2660201/what-parameters-should-i-use-in-a-google-maps-url-to-go-to-a-lat-lon)

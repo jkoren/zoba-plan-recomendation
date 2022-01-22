@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Trip from '../Trip/Trip'
+import FetchPlanNoAPI from './FetchPlanNoAPI';
 
 function Plan(props) {
   const [plan, setPlan] = useState([]);
@@ -53,7 +54,13 @@ function Plan(props) {
   }
 
   useEffect(() => {
-      FetchPlan()
+      // using API
+      // FetchPlan()
+
+      // not using API
+      const plan=FetchPlanNoAPI(planId) 
+      setPlan(plan)
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [planId])
 
