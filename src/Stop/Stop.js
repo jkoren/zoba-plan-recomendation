@@ -29,7 +29,7 @@ function Stop(props) {
       <td>{latitude}</td>
       <td><a href={mapURL} target="_blank" rel="noreferrer">map</a></td>
       <td><a href={panoramaURL} target="_blank" rel="noreferrer">panorama</a></td>
-      {/* <td><button onClick={handleClick}>Map</button></td> */}
+      <td><button onClick={handleClick}>Map</button></td>
     </tr>
   )
 }

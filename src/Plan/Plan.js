@@ -83,12 +83,12 @@ function Plan(props) {
 
   return (
     <div>
+      <h2>{plan.name}</h2>
+      <h2>{plan.id}</h2>
       <Map
         longitude={longitude}
         latitude={latitude}
       />
-      <h2>{plan.name}</h2>
-      <h2>{plan.id}</h2>
       {tripsComponent}
     </div>
   )

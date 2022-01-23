@@ -1,10 +1,17 @@
+import mockMap from '../images/mockMap.png'
+
 function Map(props) {
-  const mapURL = props ? "no map" : props.longitude + " " + props.latitude
-  // console.log(mapURL)
+  const mapComponent = props.latitude === undefined ? "" : 
+  <>
+    <img src={mockMap} alt="mock map" width="500"/>
+    <p>Map for {props.latitude}, {props.longitude}</p>
+  </>
 
   return (
     <> 
-    {/* {mapURL}  */}
+
+      {mapComponent} 
+    
     </>
   )
 }

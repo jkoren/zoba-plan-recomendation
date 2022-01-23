@@ -13,6 +13,8 @@ function Trip(props) {
       <Stop 
         key={index}
         stop={stop}
+        setLongitude={props.setLongitude}
+        setLatitude={props.setLatitude}
       />
     )
   )
