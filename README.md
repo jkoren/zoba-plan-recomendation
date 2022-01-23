@@ -22,8 +22,11 @@ Runs the app in the development mode.  Open [http://localhost:3000](http://local
 
 Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## API
+## API's
 This project uses data from the Zoba API at https://api.zoba.com/.
+
+For Maps to work, the project needs a Google Maps API key.  Add an .env file with the variable REACT_APP_GOOGLE_MAPS_EMBEDDED_API_KEY=AIkeyexample
+Make APIkeyexample your Google Maps API key.
 
 ## Tech/framework used
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by Jeff Korenstein.
