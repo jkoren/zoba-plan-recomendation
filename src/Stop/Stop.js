@@ -25,11 +25,10 @@ function Stop(props) {
       <td>{action}</td>
       <td>{numVehicles}</td>
       <td>{vehicle_id}</td>
-      <td>{longitude}</td>
       <td>{latitude}</td>
-      <td><a href={mapURL} target="_blank" rel="noreferrer">map</a></td>
-      <td><a href={panoramaURL} target="_blank" rel="noreferrer">panorama</a></td>
+      <td>{longitude}</td>
       <td><button onClick={handleClick}>Map</button></td>
+      <td><a href={panoramaURL} target="_blank" rel="noreferrer">panorama</a></td>
     </tr>
   )
 }

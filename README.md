@@ -23,10 +23,12 @@ Runs the app in the development mode.  Open [http://localhost:3000](http://local
 Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## API's
-This project uses data from the Zoba API at https://api.zoba.com/.
+This project uses data from the Zoba API at https://api.zoba.com/.  The code has an option to run without the API if it is not available.
+This can be turned on by changing the code in the useEffect() in Plan.js.
 
-For Maps to work, the project needs a Google Maps API key.  Add an .env file with the variable REACT_APP_GOOGLE_MAPS_EMBEDDED_API_KEY=AIkeyexample
-Make APIkeyexample your Google Maps API key.
+The projects pulls up maps dynamically from Google Maps into a React component.  For this feature to work, the project needs a Google Maps API key.  The key should be in an .env file with the variable 
+`REACT_APP_GOOGLE_MAPS_EMBEDDED_API_KEY=AIkeyexample`
+where `APIkeyexample` is your Google Maps API key.
 
 ## Tech/framework used
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by Jeff Korenstein.
@@ -46,4 +48,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [A Simple Explanation of React.useEffect()](https://dmitripavlutin.com/react-useeffect-explanation/)
 
-- [What parameters should I use in a Google Maps URL to go to a lat-lon?](https://stackoverflow.com/questions/2660201/what-parameters-should-i-use-in-a-google-maps-url-to-go-to-a-lat-lon)
+- [Launching Google Maps and performing a specific action](https://developers.google.com/maps/documentation/urls/get-started#search-action)
+
+- [Google Maps - Embedding a map](https://developers.google.com/maps/documentation/embed/embedding-map)

@@ -59,11 +59,11 @@ function Plan(props) {
 
   useEffect(() => {
       // using API
-      // FetchPlan()
+      FetchPlan()
 
       // not using API
-      const plan=FetchPlanNoAPI(planId) 
-      setPlan(plan)
+      // const plan=FetchPlanNoAPI(planId) 
+      // setPlan(plan)
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [planId])
@@ -86,8 +86,8 @@ function Plan(props) {
       <h2>{plan.name}</h2>
       <h2>{plan.id}</h2>
       <Map
-        longitude={longitude}
         latitude={latitude}
+        longitude={longitude}
       />
       {tripsComponent}
     </div>
