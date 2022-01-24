@@ -1,10 +1,10 @@
-import PlanList from "./PlanList/PlanList";
+import PlanPage from "./PlanPage/PlanPage";
 
 function App() {
   return (
     <>
       <h2> Zoba Frontend Trip Planner </h2>
-      <PlanList/>
+      <PlanPage/>
     </>
   )
 }
