@@ -12,8 +12,8 @@ function Plan(props) {
 
   const FetchPlan = async () => {
     // normally these would be environment variables
-    const username = "scooterer";
-    const password = "geospatial optimization";
+    const username = "";
+    const password = "";
     const market = "austin"
     const authURL = "https://api.zoba.com/api/v1/app/api-token-auth/"
 
@@ -59,11 +59,11 @@ function Plan(props) {
 
   useEffect(() => {
       // using API
-      FetchPlan()
+      // FetchPlan()
 
       // not using API
-      // const plan=FetchPlanNoAPI(planId) 
-      // setPlan(plan)
+      const plan=FetchPlanNoAPI(planId) 
+      setPlan(plan)
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [planId])
