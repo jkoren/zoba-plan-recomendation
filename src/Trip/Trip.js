@@ -31,8 +31,8 @@ function Trip(props) {
             <th>Action</th>
             <th>Num Vehicles</th>
             <th>Vehicle ID</th>
-            <th>Longitude</th>
             <th>Latitude</th>
+            <th>Longitude</th>
           </tr>
         </thead>
         <tbody>

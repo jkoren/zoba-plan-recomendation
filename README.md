@@ -26,9 +26,7 @@ Launches the test runner in the interactive watch mode. See the section about [r
 This project uses data from the Zoba API at https://api.zoba.com/.  The code has an option to run without the API if it is not available.
 This can be turned on by changing the code in the useEffect() in Plan.js.
 
-The projects pulls up maps dynamically from Google Maps into a React component.  For this feature to work, the project needs a Google Maps API key.  The key should be in an .env file with the variable 
-`REACT_APP_GOOGLE_MAPS_EMBEDDED_API_KEY=AIkeyexample`
-where `APIkeyexample` is your Google Maps API key.
+The projects pulls up maps dynamically from Google Maps into a React component.  For this feature to work, the project needs a Google Maps API key.  The key should be in an .env file with the variable `REACT_APP_GOOGLE_MAPS_EMBEDDED_API_KEY=AIkeyexample` where `APIkeyexample` is your Google Maps API key.
 
 ## Tech/framework used
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by Jeff Korenstein.
