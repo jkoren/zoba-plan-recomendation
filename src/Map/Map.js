@@ -3,7 +3,7 @@ function Map(props) {
 
   const mapURLzoom = `https://www.google.com/maps/embed/v1/view?key=${APIkey}&zoom=20&center=${props.latitude},${props.longitude}`
 
-  const mapURLoverview = `https://www.google.com/maps/embed/v1/view?key=AIzaSyA7-ev5jIqziqi4gLLGEUQbPMr0AfyC4n0&zoom=17&center=${props.latitude},${props.longitude}`
+  const mapURLoverview = `https://www.google.com/maps/embed/v1/view?key=${APIkey}&zoom=17&center=${props.latitude},${props.longitude}`
 
   const mapComponent = props.latitude === undefined ? "" : 
     <>
