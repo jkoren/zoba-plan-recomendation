@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Trip from '../Trip/Trip'
-import FetchPlanNoAPI from './FetchPlanNoAPI';
 import Map from '../Map/Map'
+import FetchPlanNoAPI from './FetchPlanNoAPI'
 
 function Plan(props) {
   const [plan, setPlan] = useState([]);
